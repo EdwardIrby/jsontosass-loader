@@ -7,13 +7,13 @@ Forked from gist: [jsonToSassVars](https://gist.github.com/Kasu/ea4f4861a81e626e
 In your webpack.config.js add the following;
 
 ``` javascript
-var sassGlobals = require('[vars].json');
-var sass = JSON.stringify(sassGlobals);
-// => returns [vars].json content as string
+var sassGlobals = require('[YourVars.json file]');
+var sassVars = JSON.stringify(sassGlobals);
+// => returns [YourVars.json file] content as string
 var webpackConfig = {
     module: {
         loaders:[
-            {test: /.scss$/, loader: "style!css!sass!jsontosass?" + sass}
+            {test: /.scss$/, loader: "style!css!sass!jsontosass?" + sassVars}
         ]
     },
 }
