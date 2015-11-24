@@ -34,6 +34,12 @@ function encodeKey(key) {
 
 function encode(obj) {
     if (typeof obj === "string") {
+        //color literal - return as-is
+        if (/^\#([0-9A-Za-z]{3}){1,2}$/.test(obj.trim())) return obj.trim();
+        
+        //simple color - return as-is
+        if (/^(rgba?|hsla?)\([^\)]+\)$/.test(obj.trim())) return obj.trim();
+        
         //css dimension - return as-is
         if (/^\d+(em|ex|ch|rem|vw|vh|vmin|vmax|cm|mm|q|in|ot|pc|px|deg|grad|rad|turn|s|ms|Hz|kHz|dpi|dpom|dppx)?$/.test(obj.trim())) return obj.trim();
         
@@ -64,5 +70,6 @@ function jsonToSassVars (obj) {
     var kvs = keys.map(function(key){
         return '$' + encodeKey(key) + ':' + encode(obj[key]);
     }).join(';\n');
+    console.log('\n\n\n\n\n',kvs);
     return "/*** jsontosass:begin ***/\n" + kvs + ";\n/*** jsontosass:end ***/\n";
 }
