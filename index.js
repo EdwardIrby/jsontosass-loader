@@ -70,6 +70,6 @@ function jsonToSassVars (obj) {
     var kvs = keys.map(function(key){
         return '$' + encodeKey(key) + ':' + encode(obj[key]);
     }).join(';\n');
-    console.log('\n\n\n\n\n',kvs);
+    //console.log('\n\n\n\n\n',kvs);
     return "/*** jsontosass:begin ***/\n" + kvs + ";\n/*** jsontosass:end ***/\n";
 }
