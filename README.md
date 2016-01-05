@@ -1,6 +1,6 @@
 # json to sass loader for webpack
 
-### 0.1.6 Changes
+### 0.1.7 Changes
 - **Flagged as cacheable**
 - **Simpler implementation** (See Example Config)
 - **Marked dependencies** (triggers build on webpack watch and webpack-dev-server when vars file is changed)
