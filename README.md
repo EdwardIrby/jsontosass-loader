@@ -1,9 +1,9 @@
 # json to sass loader for webpack
 
-### 0.1.3 Changes
-- **Simpler implementation** (See Example Config)
+### 0.1.4 Changes
 - **Flagged as cacheable**
-- **Marked dependencies**
+- **Simpler implementation** (See Example Config)
+- **Marked dependencies** (triggers build on webpack watch and webpack-dev-server when vars file is changed)
 
 
 ### Installation
@@ -15,7 +15,7 @@
 [Documentation: Using loaders](http://webpack.github.io/docs/using-loaders.html)
 
 ### Example config
-**You can use either a json file or a js file with the modules.export syntax as your vars file.**
+**You can use either a json file or a js file with the module.exports syntax as your vars file.**
 
 ``` javascript
 var sassVars = 'path/to/your/vars.js|json';
@@ -40,7 +40,17 @@ var webpackConfig = {
   "localNavHeight":"50px",
 }
 ```
-
+**Input [YourVars.js file]**
+``` js
+module.exports = {
+  "breakpoints":{
+      "portraitS": "320px",
+      "portraitM": "360px",
+      "portraitL": "414px",
+    },
+    "localNavHeight":"50px",
+}
+```
 **Output SCSS**
 ``` scss
 $breakpoints:(portraitS:320px,portraitM:360px,portraitL:414px);
