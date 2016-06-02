@@ -50,4 +50,22 @@ describe('loader', function() {
     context.cacheable.should.have.callCount(1)
     context.addDependency.should.have.callCount(1)
   });
+
+  it('should convert empty string JSON to Sass', function() {
+    context.query = '?path=test/json/emptyString.json'
+    loader.call(context, someSass)
+      .should.be.eql(someSass);
+
+    context.cacheable.should.have.callCount(1)
+    context.addDependency.should.have.callCount(1)
+  });
+
+  it('should convert empty object JSON to Sass', function() {
+    context.query = '?path=test/json/emptyObject.json'
+    loader.call(context, someSass)
+      .should.be.eql(someSass);
+
+    context.cacheable.should.have.callCount(1)
+    context.addDependency.should.have.callCount(1)
+  });
 });
