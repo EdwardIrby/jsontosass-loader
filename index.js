@@ -20,6 +20,10 @@ module.exports = function(content) {
       sass += "$" + key + ":" + JSON.stringify(obj[key], null, indent) + ";\n";
     }
 
+    if (!sass) {
+      return sass
+    }
+
     // Store string values (so they remain unaffected)
     var storedStrings = [];
     sass = sass.replace(/(["'])(?:(?=(\\?))\2.)*?\1/g, function (str) {
