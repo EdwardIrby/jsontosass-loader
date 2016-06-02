@@ -8,8 +8,17 @@
   "files": [
     "index.js"
   ],
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
   "dependencies": {
     "loader-utils": "~0.2.11"
+  },
+  "devDependencies": {
+    "mocha": "2.5.3",
+    "should": "9.0.0",
+    "should-sinon": "0.0.5",
+    "sinon": "1.17.4"
   },
   "repository": {
     "type": "git",
