@@ -48,5 +48,5 @@ module.exports = function(content) {
 
   var sass = jsonToSassVars(obj);
 
-  return sass ? sass + '\n ' + content : content;
+  return sass ? sass + '\n' + content : content;
 }
