@@ -1,3 +1,6 @@
+
+# NO LONGER SUPPORTED. IF YOU WOULD LIKE TO TAKE OVER THIS PACKAGE SEND ME A MESSAGE.
+---
 # json to sass loader for webpack
 
 ### 0.1.8 Changes
